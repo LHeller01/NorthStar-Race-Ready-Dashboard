@@ -1,0 +1,152 @@
+﻿<Page
+    x:Class="AutoDashboard.UniversalApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AutoDashboard.UniversalApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <StackPanel 
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Grid.Row="0"
+            
+            
+            >
+                <controls:RadialGauge x:Name="RadialGaugeControl" Minimum="0" Value="{Binding Rpm}"
+	Maximum="6000" TickSpacing="20" ScaleWidth="26" Unit="RPM" TickBrush="Gainsboro" 
+	ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	NeedleWidth="5" TickLength="18">
+                </controls:RadialGauge>
+                <controls:RadialGauge x:Name="RadialGaugeControl2" Minimum="0" Value="{Binding FuelLevel}"
+	Maximum="100" TickSpacing="20" ScaleWidth="26" Unit="Fuel level %" TickBrush="Gainsboro" 
+	ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	NeedleWidth="5" TickLength="18">
+                </controls:RadialGauge>
+
+            </StackPanel>
+
+
+
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" VerticalAlignment="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <controls:RadialGauge x:Name="RadialGaugeControl3" Grid.Column="0"   Minimum="0" 
+	Maximum="180" TickSpacing="20" ScaleWidth="26" Unit="units" TickBrush="Gainsboro" Height="150"
+	ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	NeedleWidth="5" TickLength="18">
+                        </controls:RadialGauge>
+
+                        <controls:RadialGauge x:Name="RadialGaugeControl4" Grid.Column="1"  Minimum="0" 
+	Maximum="180" TickSpacing="20" ScaleWidth="26" Unit="Air Temp F" TickBrush="Gainsboro" Height="150"
+	ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	NeedleWidth="5" TickLength="18">
+                        </controls:RadialGauge>
+
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <controls:RadialGauge x:Name="RadialGaugeControl5" Grid.Column="1"  Minimum="0" 
+	Maximum="180" TickSpacing="20" ScaleWidth="26" Unit="Oil Temp" TickBrush="Gainsboro" Height="150"
+	ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	NeedleWidth="5" TickLength="18">
+                        </controls:RadialGauge>
+
+                        <controls:RadialGauge x:Name="RadialGaugeControl6" Grid.Column="2"   Minimum="0" 
+	Maximum="180" TickSpacing="20" ScaleWidth="26" Unit="Units" TickBrush="Gainsboro" Height="150"
+	ScaleTickBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	NeedleWidth="5" TickLength="18">
+                        </controls:RadialGauge>
+
+
+
+
+                    </Grid>
+
+
+
+
+
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                        Orientation="Vertical"
+                        VerticalAlignment="Bottom"
+                        >
+
+
+
+                    
+                    <Button
+            Name="StartButton"
+            Click="StartButton_Click">
+                        Start
+                    </Button>
+                </StackPanel>
+
+
+            </Grid>
+
+
+        </Grid>
+
+
+
+
+   
+</Page>
